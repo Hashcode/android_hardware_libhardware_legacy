@@ -81,7 +81,7 @@ static uint32_t out_get_channels(const struct audio_stream *stream)
 {
     const struct legacy_stream_out *out =
         reinterpret_cast<const struct legacy_stream_out *>(stream);
-    return out->legacy_out->channels();
+    return (out->legacy_out->channels() >> 2);
 }
 
 static int out_get_format(const struct audio_stream *stream)
